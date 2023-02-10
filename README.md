@@ -13,3 +13,5 @@ Array data dari Basedata.java akan ditampilkan pada View.java sesuai ketentuan, 
 Pada Vehicle.java, terdapat abstract class Vehicle yang berisi semua data yang diperlukan dari sebuah kendaraan beserta ketentuannya secara umum.
 Ketentuan secara spesifik terdapat pada class Car dan Motor yang merupakan inheritance dari Vehicle.
 Class Datab yang juga merupakan inheritance dari Vehicle digunakan untuk membuat array pada Basedata.java.
+
+Data yang diperlukan Car dan Motor ada sedikit perbedaan. Saya menggabungkan mereka agar lebih mudah dimasukkan ke dalam array (Array tidak harus dipisah menjadi Car dan Motorcycle).
