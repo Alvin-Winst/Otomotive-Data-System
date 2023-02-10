@@ -12,6 +12,7 @@ public class Basedata {
 		data.set(x, temp);
 	}
 	public static void main(String[] args) {
-		HomePage.main(null);
+		HomePage homepage = new HomePage();
+		homepage.main();
 	}
 }

@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class HomePage {
-	public static void main(String[] args) {
+	public void main() {
 		// TODO Auto-generated method stub
 		Scanner scan = new Scanner(System.in);
 		int choice = 0;
