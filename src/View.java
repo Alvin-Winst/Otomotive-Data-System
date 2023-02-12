@@ -1,29 +1,28 @@
 import java.util.Scanner;
+import java.util.ArrayList;
 
 public class View {
 
-	public void main() {
+	public ArrayList<Datab> main(Scanner scan, ArrayList<Datab> data) {
 		// TODO Auto-generated method stubS
-		Basedata tampilan = new Basedata();
-		Datab data = new Datab();
-		Scanner scan = new Scanner(System.in);
+		Datab datatp = new Datab();
 		System.out.println("|-----|---------------|---------------|");
 		System.out.println("| No  |     Type      |      Name     |");
 		System.out.println("|-----|---------------|---------------|");
-		for (int j = 0; j < tampilan.count; j++) {
-			data = tampilan.data.get(j);
+		for (int j = 0; j < data.size(); j++) {
+			datatp = data.get(j);
 			
-			int x = 15-data.type.length();
-			int y = 15-data.name.length();
+			int x = 15-datatp.type.length();
+			int y = 15-datatp.name.length();
 			System.out.print("|"+(j+1));
 			for (int i = 0; i < 5-j/10-1; i++) {
 				System.out.print(" ");
 			}
-			System.out.print("|"+data.type);
+			System.out.print("|"+datatp.type);
 			for (int i = 0; i < x; i++) {
 				System.out.print(" ");
 			}
-			System.out.print("|"+data.name);
+			System.out.print("|"+datatp.name);
 			for (int i = 0; i < y; i++) {
 				System.out.print(" ");
 			}
@@ -36,37 +35,37 @@ public class View {
 		int choice = -1;
 		do {
 			System.out.print("Pick a vehicle number to test drive[Enter '0' to exit]: ");
-			choice = Integer.parseInt(scan.nextLine());
-			if (choice>0 && choice<=tampilan.count) {
-				data = tampilan.data.get(choice-1);
+			choice = scan.nextInt();
+			scan.nextLine();
+			if (choice>0 && choice<=data.size()) {
+				datatp = data.get(choice-1);
 				System.out.println("Vehicle number #"+choice);
 				System.out.println("---------------------");
-				System.out.println("Brand: "+data.brand);
-				System.out.println("Name: "+data.name);
-				System.out.println("License Plate: "+data.license);
-				System.out.println("Type: "+data.tipe);
-				System.out.println("Gas Capacity: "+data.gas);
-				System.out.println("Top Speed: "+data.speed);
-				System.out.println("Wheel(s): "+data.wheel);
-				if(data.type.equals("Car")) {
-					System.out.println("Entertainment System: "+data.entsys);
+				System.out.println("Brand: "+datatp.brand);
+				System.out.println("Name: "+datatp.name);
+				System.out.println("License Plate: "+datatp.license);
+				System.out.println("Type: "+datatp.tipe);
+				System.out.println("Gas Capacity: "+datatp.gas);
+				System.out.println("Top Speed: "+datatp.speed);
+				System.out.println("Wheel(s): "+datatp.wheel);
+				if(datatp.type.equals("Car")) {
+					System.out.println("Entertainment System: "+datatp.entsys);
 					System.out.println("Turning on entertainment system...");
-					if(data.tipe.equals("Supercar")) {
+					if(datatp.tipe.equals("Supercar")) {
 						System.out.println("Boosting!");
 					}
 				}
 				else {
-					System.out.println(data.name+" is standing!");
+					System.out.println(datatp.name+" is standing!");
 				}
 				System.out.print("Price: ");
-				data.price = Integer.parseInt(scan.nextLine());
-				tampilan.data.set(choice-1, data);
-				System.out.println("Price: "+data.price);
+				datatp.price = scan.nextInt();
+				scan.nextLine();
+				data.set(choice-1, datatp);
+				System.out.println("Price: "+datatp.price);
 			}
-		} while (choice<0 || choice>tampilan.data.size());
-		if (scan!=null) {
-			scan.close();
-		}
+		} while (choice<0 || choice>data.size());
+		return data;
 	}
 
 }

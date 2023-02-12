@@ -1,10 +1,11 @@
 import java.util.Scanner;
+import java.util.ArrayList;
 
 public class HomePage {
-	public void main() {
+	public void main(ArrayList<Datab> data) {
 		// TODO Auto-generated method stub
 		Scanner scan = new Scanner(System.in);
-		int choice = 0;
+		int choice;
 		do {
 			System.out.println("Database Otomotif");
 			System.out.println("-------------------");
@@ -13,19 +14,21 @@ public class HomePage {
 			System.out.println("3. Keluar");
 			System.out.print("Input pilihan: ");
 			choice = scan.nextInt();
+			scan.nextLine();
 			
 			if (choice==1) {
 				Input input = new Input();
 				System.out.println("Data Kendaraan");
 				System.out.println("----------------");
-				input.main();
+				data = input.main(scan,data);
 			}
 			else if (choice==2) {
 				View view = new View();
 				System.out.println("Data Kendaraan");
 				System.out.println("----------------");
-				view.main();
+				data = view.main(scan,data);
 			}
+			System.out.println("");
 		} while (choice != 3);
 		if (scan!=null) {
 			scan.close();

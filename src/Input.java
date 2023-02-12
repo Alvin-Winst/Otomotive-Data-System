@@ -1,9 +1,9 @@
 import java.util.Scanner;
+import java.util.ArrayList;
 public class Input{
 
-	public void main() {
+	public ArrayList<Datab> main(Scanner scan, ArrayList<Datab> data) {
 		// TODO Auto-generated method stub
-		Scanner scan = new Scanner(System.in);
 		String type = new String();
 		do {
 			System.out.print("Input type [Car | Motorcycle]: ");
@@ -45,19 +45,19 @@ public class Input{
 				car.entsys = Integer.parseInt(scan.nextLine());
 			} while (car.entsys()==0);
 			
-			Basedata keep = new Basedata();
-			keep.temp.type = car.type;
-			keep.temp.brand = car.brand;
-			keep.temp.name = car.name;
-			keep.temp.license = car.license;
-			keep.temp.speed = car.speed;
-			keep.temp.gas = car.gas;
-			keep.temp.wheel = car.wheel;
-			keep.temp.tipe = car.tipe;
-			keep.temp.entsys = car.entsys;
-			keep.temp.helm = 0;
-			keep.temp.price = 0;
-			keep.insertdata();
+			Datab keep = new Datab();
+			keep.type = car.type;
+			keep.brand = car.brand;
+			keep.name = car.name;
+			keep.license = car.license;
+			keep.speed = car.speed;
+			keep.gas = car.gas;
+			keep.wheel = car.wheel;
+			keep.tipe = car.tipe;
+			keep.entsys = car.entsys;
+			keep.helm = 0;
+			keep.price = 0;
+			data.add(keep);
 		}
 		else if (type.equals("Motorcycle")) {
 			Motor motor = new Motor();
@@ -95,25 +95,22 @@ public class Input{
 				motor.helm = Integer.parseInt(scan.nextLine());
 			} while (motor.helm()==0);
 			
-			Basedata keep = new Basedata();
-			keep.temp.type = motor.type;
-			keep.temp.brand = motor.brand;
-			keep.temp.name = motor.name;
-			keep.temp.license = motor.license;
-			keep.temp.speed = motor.speed;
-			keep.temp.gas = motor.gas;
-			keep.temp.wheel = motor.wheel;
-			keep.temp.tipe = motor.tipe;
-			keep.temp.helm = motor.helm;
-			keep.temp.entsys = 0;
-			keep.temp.price = 0;
-			keep.insertdata();
-		}
-		if (scan!=null) {
-			scan.close();
+			Datab keep = new Datab();
+			keep.type = motor.type;
+			keep.brand = motor.brand;
+			keep.name = motor.name;
+			keep.license = motor.license;
+			keep.speed = motor.speed;
+			keep.gas = motor.gas;
+			keep.wheel = motor.wheel;
+			keep.tipe = motor.tipe;
+			keep.helm = motor.helm;
+			keep.entsys = 0;
+			keep.price = 0;
+			data.add(keep);
 		}
 		System.out.println("Data berhasil dimasukkan.");
-		System.out.println("");
+		return data;
 	}
 
 }
