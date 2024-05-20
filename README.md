@@ -1,17 +1,8 @@
-# LnT-Mobile-Java
+# Otomotive Data System (LnT Mobile Application Development Mid Project)
 
-Run program dari file bernama Basedata.java.
-Di dalam file tersebut, terdapat array untuk menampung data yang diinput.
+Otomotive Data System merupakan suatu program yang digunakan untuk menyimpan data kendaraan otomotif. Program ini terdiri dari dua menu, yaitu:
+### Menu Input
+Pada menu ini, user akan diminta untuk melakukan inputan data kendaraan untuk disimpan. Jenis kendaraan yang dapat hanya kendaraan dengan 4 dan 2 roda.
 
-Basedata.java akan menjalankan command main yang terdapat di HomePage.java.
-HomePage.java akan mengeluarkan output di console dan menjalankan perintah sesuai pilihan yang diinput user
-(1 untuk Input.java, 2 untuk View.java, 3 untuk keluar, dan sisanya akan tetap looping).
-
-User menginput data pada Input.java sesuai ketentuan dan data tersebut akan dimasukkan ke array yang terdapat di Basedata.java.
-Array data dari Basedata.java akan ditampilkan pada View.java sesuai ketentuan, dimana user dapat memilih kendaraan untuk di-test drive dan diberi harga.
-
-Pada Vehicle.java, terdapat abstract class Vehicle yang berisi semua data yang diperlukan dari sebuah kendaraan beserta ketentuannya secara umum.
-Ketentuan secara spesifik terdapat pada class Car dan Motor yang merupakan inheritance dari Vehicle.
-Class Datab yang juga merupakan inheritance dari Vehicle digunakan untuk membuat array pada Basedata.java.
-
-Data yang diperlukan Car dan Motor ada sedikit perbedaan. Saya menggabungkan mereka agar lebih mudah dimasukkan ke dalam array (Array tidak harus dipisah menjadi Car dan Motorcycle).
+### Menu View
+Pada menu ini, user dapat memanggil kendaraan dari data kendaraan yang sudah disimpan. Tergantung pada jenisnya, kendaraan yang dipanggil akan melakukan output yang berbeda. Kemudian, user akan diminta untuk memasukkan harga kendaraan tersebut.
